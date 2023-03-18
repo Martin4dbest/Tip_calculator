@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">SPLI<br/>TTER</div>
+        <div class="content">
+            <!-- Added div tag to section the pages-->
+            <div class="grid-item">
+                <div class="content_bill">Bill</div>
+                <div class="content_amount">
+                    <input type="number" name="" id="inputAmount" placeholder="$                                                      142.55">  
+        
+                    
+                </div>
+                <div class="text">Select Tip %</div>
+                <div class="buttons">
+                    <button onclick="calculate('5')">5%</button>
+                    <button onclick="calculate('10')">10%</button>
+                    <button onclick="calculate('15')">15%</button>
+                    <button onclick="calculate('25')">25%</button>
+                    <button onclick="calculate('50')">50%</button>
+                    <input type="text" name="custom" id="custom" placeholder="CUSTOM" onchange="custom()">
+                    <!-- <button id="custom">Custom</button> -->
+                </div>
+                <div class="text">Number of People</div>
+                <div class="content_icon">
+                    <span style="display:flex; flex-direction: column; justify-content: center; align-items: center;"><img src="./images/icon-person.svg" alt="icon-person"></span>
+                    <span> <input type="number" name="" id="No_of_people_input"> </span>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="content_footer">
+                    <div class="footer_text">
+                        <span><span class="content_footer--text">Tip Amount</span> <br/>/ person</span>
+                        <span id="content_footer--amount1" onclick="displayAnswer()" class="content_footer--amount">$4.27</span>
+                    </div>
+                    <div class="footer_text">
+                        <span><span class="content_footer--text">Total</span> <br/>/ person</span>
+                        <span id="content_footer--amount2"  class="content_footer--amount">$32.79</span>
+                    </div>
+                    <button id="reset_button">RESET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
