@@ -1,39 +1,90 @@
-let bill = document.getElementById("inputAmount");
-let numberOfPeople = document.getElementById("No_of_people_input");
-let contentFooterAmount1 = document.getElementById("content_footer--amount1");
-let contentFooterAmount2 = document.getElementById("content_footer--amount2");
-let resetButton = document.getElementById("reset_button");
+// input fields 
+let billInput = document.querySelector('.bill-amount-input');
+let amountOfPeapleInput = document.querySelector('.people-amount-input');
 
-function calculate(number) {
-  // Attach an event listener to the input element for tracking its value changes
-  numberOfPeople.addEventListener("input", () => {
-    console.log(numberOfPeople.value); // log the current value of the input element
-  });
+// tip and total values
+let tipAmount = document.querySelector('.tip-amount');
+let totalAmount = document.querySelector('.total-amount');
 
-  let resultTwo = bill.value / 100 * number;
-  let total = number / numberOfPeople.value;
-  let result = bill.value / 100 * total;
-  let subTotalFormatted = parseFloat(result).toFixed(2);
-  result = subTotalFormatted;
+// percentage buttons
+let tipValue = 0;
+let percentageButtons = Array.from(document.querySelectorAll('.percentage-button'));
+let customPercentageButton = document.querySelector('.custom-button');
 
-  console.log(subTotalFormatted);
+// reset button
+let resetButton = document.querySelector('.reset-button');
 
-  function displayAnswer() {
-    contentFooterAmount1.innerHTML = `$ ${result}`;
-    contentFooterAmount2.innerHTML = `$ ${resultTwo}`;
+// input field values
+let billValue;
+let amountOfPeopleValue = 1;
 
-    resetButton.addEventListener("click", () => {
-      contentFooterAmount1.innerHTML = "$0.00";
-      contentFooterAmount2.innerHTML = "$0.00";
-      const message = prompt("Enter your name:");
-      alert(`Hello, ${message}!`);
-    });
+// input field eventlisteners
+billInput.addEventListener('input', () => {
+  billValue = billInput.value;
+  if(amountOfPeopleValue != 0){
+    updateTotal();
+    updateTipAmount();
   }
+});
 
-  displayAnswer();
+amountOfPeapleInput.addEventListener('input', () => {
+  amountOfPeopleValue = amountOfPeapleInput.value;
+  if(amountOfPeopleValue != 0){
+    updateTotal();
+    updateTipAmount();
+  }
+});
+
+//percentage buttons eventlisteners
+percentageButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    if(billValue != null && amountOfPeopleValue != null){
+      resetPercentageButtons();
+      tipValue = button.innerHTML.replace('%', '');
+      button.classList.add('percent-button-active');
+      updateTipAmount();
+    }
+  });
+});
+
+// custom button eventlistener
+customPercentageButton.addEventListener('click', () => {
+  resetPercentageButtons();
+  customPercentageButton.innerHTML = `<input type="text">`
+  let customPercentageInput = customPercentageButton.childNodes[0];
+  customPercentageInput.focus();
+  customPercentageInput.addEventListener('input', () => {
+    tipValue = customPercentageInput.value;
+    customPercentageButton.classList.add('percent-button-active');
+    updateTipAmount();
+  });
+});
+
+// reset button eventlistener
+resetButton.addEventListener('click', () => {
+  tipAmount.innerHTML = '€0.00';
+  totalAmount.innerHTML = '€0.00';
+  billInput.value = '';
+  amountOfPeapleInput.value = '';
+  billValue = null;
+  amountOfPeopleValue = null;
+  resetPercentageButtons();
+})
+
+function updateTotal(){
+  tipAmount.innerHTML = '';
+  totalAmount.innerHTML = `€${billValue / amountOfPeopleValue}`;
 }
 
-// Call the function with a sample argument
-calculate(10);
+function updateTipAmount(){
+  tipAmount.innerHTML = '';
+  tipAmount.innerHTML = `€${(billValue / 100 * tipValue) / amountOfPeopleValue}`;
+}
 
-
+function resetPercentageButtons(){
+  customPercentageButton.innerHTML = 'Custom';
+  customPercentageButton.classList.remove('percent-button-active');
+  percentageButtons.forEach(button => {
+    button.classList.remove('percent-button-active');
+  });
+}

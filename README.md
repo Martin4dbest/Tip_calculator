@@ -1,6 +1,6 @@
 
 <h1>Tip Calculator</h1>
-This PORTFOLIO PROJECT is a simple tip calculator program that allows you to calculate the appropriate tip based on your total bill and desired tip percentage. It can be used in various settings, such as restaurants, bars, or any other scenario where you need to leave a tip.
+This PORTFOLIO PROJECT is a simple tip calculator program that allows you to calculate the appropriate tip based on your total bill and desired tip percentage. It can also be used in various settings, such as restaurants, bars, or any other scenario where you need to leave a tip.
 
 <h2>How to Use</h2>
 Enter the total bill amount in the designated field.
