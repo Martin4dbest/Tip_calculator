@@ -1,4 +1,4 @@
-
+<h1>PortFolio Project</h1>
 <h1>Tip Calculator</h1>
 This PORTFOLIO PROJECT is a simple tip calculator program that allows you to calculate the appropriate tip based on your total bill and desired tip percentage. It can also be used in various settings, such as restaurants, bars, or any other scenario where you need to leave a tip.
 
@@ -19,7 +19,7 @@ This tip calculator was built using HTML, CSS, and JavaScript. The user interfac
 <h2>Future Improvements</h2>
 Some potential improvements that could be made to this tip calculator include:
 
-Adding a feature to save past bills and tips for future reference.
+Adding a feature to save a past bills and tips for future reference.
 Allowing users to choose between different currencies and tax rates.
 Offering additional tip suggestions based on the quality of service or the size of the party.
 Creating a mobile app version for more convenient use on the go.
