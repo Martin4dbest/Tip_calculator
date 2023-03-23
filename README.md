@@ -26,4 +26,4 @@ Creating a mobile app version for more convenient use on the go.
 
 
 <h2>Credits</h2>
-This tip calculator was created by [Nsibong Akpan and Martin Agoha] as a project for PORTFOLIO PROJECT AT ALX HOLBERTON]. Feel free to use and modify this code for your own projects. If you have any questions or feedback, please contact [Nsibong Akpan at.....     and Martin Agoha at martin4dtruth@gmail.com]
+This tip calculator was created by [Nsibong Akpan and Martin Agoha] as a project for PORTFOLIO PROJECT AT ALX HOLBERTON]. Feel free to use and modify this code for your own projects. If you have any questions or feedback, please contact [Nsibong Akpan at nsisongakpakpan01@gmail.com and Martin Agoha at martin4dtruth@gmail.com]

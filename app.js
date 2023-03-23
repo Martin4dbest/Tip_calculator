@@ -1,7 +1,7 @@
 let bill = document.getElementById("inputAmount");
 let numberOfPeople = document.getElementById ("No_of_people_input");
 
-//This is percentage buttons
+//This is the percentage buttons
 let tipValue = 0;
 let percentageButtons = Array.from(document.querySelectorAll('.percentage-button'));
 let customPercentageButton = document.getElementById("custom");
