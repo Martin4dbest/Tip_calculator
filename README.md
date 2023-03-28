@@ -1,29 +1,12 @@
-<h1>PortFolio Project</h1>
-<h1>Tip Calculator</h1>
-This PORTFOLIO PROJECT is a simple tip calculator program that allows you to calculate the appropriate tip based on your total bill and desired tip percentage. It can also be used in various settings, such as restaurants, bars, or any other scenario where you need to leave a tip.
 
-<h2>How to Use</h2>
-Enter the total bill amount in the designated field.
-Select your desired tip percentage using the slider or by typing it in the input field.
-The calculated tip amount and total bill, including the tip, will be displayed automatically.
+Welcome to our tip calculator landing page!
 
-<h2>Features</h2>
-Simple and user-friendly interface.
-Can calculate tips based on a percentage or a fixed amount.
-Allows you to split the total bill among multiple people, with the option to round up or down.
-Provides clear and concise feedback on the calculated tip and total amount.
+Are you tired of struggling to calculate tips when dining out with friends or family? Do you find it challenging to split the bill equally among all the diners? Our tip calculator is here to help you out!
 
-<h2>Technologies Used</h2>
-This tip calculator was built using HTML, CSS, and JavaScript. The user interface was designed using Bootstrap, a popular CSS framework that allows for responsive and intuitive design.
+With our easy-to-use tip calculator, you can quickly determine the appropriate tip amount based on the total bill, the percentage of tip you want to give, and the number of people sharing the bill. Our calculator is designed to make your dining experience stress-free and enjoyable.
 
-<h2>Future Improvements</h2>
-Some potential improvements that could be made to this tip calculator include:
+To get started, simply input the total bill amount, the percentage of tip you want to give, and the number of people sharing the bill. Our calculator will then automatically calculate the tip amount and the total bill amount per person. You can adjust the percentage of tip to see how it affects the total bill amount.
 
-Adding a feature to save a past bills and tips for future reference.
-Allowing users to choose between different currencies and tax rates.
-Offering additional tip suggestions based on the quality of service or the size of the party.
-Creating a mobile app version for more convenient use on the go.
+Our tip calculator is perfect for anyone who wants to save time and avoid the hassle of manual calculations. Whether you are dining out with friends or family, our calculator will make your life easier.
 
-
-<h2>Credits</h2>
-This tip calculator was created by [Nsibong Akpan and Martin Agoha] as a project for PORTFOLIO PROJECT AT ALX HOLBERTON]. Feel free to use and modify this code for your own projects. If you have any questions or feedback, please contact [Nsibong Akpan at nsisongakpakpan01@gmail.com and Martin Agoha at martin4dtruth@gmail.com]
+So why wait? Try our tip calculator today and make your dining experience stress-free and enjoyable!

@@ -1,74 +1,59 @@
-let bill = document.getElementById("inputAmount");
-let numberOfPeople = document.getElementById ("No_of_people_input");
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip Calculator</title>
+</head>
+<body>
+	<h1>Welcome to our tip calculator landing page!</h1>
+	<p>Are you tired of struggling to calculate tips when dining out with friends or family? Do you find it challenging to split the bill equally among all the diners? Our tip calculator is here to help you out!</p>
+	<p>With our easy-to-use tip calculator, you can quickly determine the appropriate tip amount based on the total bill, the percentage of tip you want to give, and the number of people sharing the bill. Our calculator is designed to make your dining experience stress-free and enjoyable.</p>
+	<h2>How to use our tip calculator</h2>
+	<ol>
+		<li>Input the total bill amount in the first box</li>
+		<li>Select the percentage of tip you want to give from the dropdown menu</li>
+		<li>Input the number of people sharing the bill in the last box</li>
+		<li>Click on the "Calculate" button</li>
+		<li>The tip amount and the total bill amount per person will be displayed below</li>
+	</ol>
+	<form>
+		<label for="bill">Total Bill Amount:</label>
+		<input type="number" id="bill" name="bill"><br><br>
+	<label for="tip">Percentage of Tip:</label>
+	<select id="tip" name="tip">
+		<option value="10">10%</option>
+		<option value="15">15%</option>
+		<option value="20">20%</option>
+		<option value="25">25%</option>
+		<option value="30">30%</option>
+	</select><br><br>
 
-//This is the percentage buttons
-let tipValue = 0;
-let percentageButtons = Array.from(document.querySelectorAll('.percentage-button'));
-let customPercentageButton = document.getElementById("custom");
+	<label for="people">Number of People:</label>
+	<input type="number" id="people" name="people"><br><br>
 
-let contentFooterAmount1 = document.getElementById("content_footer--amount1");
-let contentFooterAmount2 = document.getElementById("content_footer--amount2");
-let resetButton = document.getElementById("reset_button");
+	<input type="button" value="Calculate" onclick="calculateTip()"><br><br>
 
-let billValue;
-let amountOfPeopleValue = 1;
-let customValue;
+	<label for="tipAmount">Tip Amount:</label>
+	<input type="text" id="tipAmount" name="tipAmount" readonly><br><br>
 
-bill.addEventListener('input', () => {
-  billValue = bill.value;
-  if(amountOfPeopleValue != 0){
-    updateTotal();
-    updateTipAmount();
-  }
-});
+	<label for="totalPerPerson">Total Bill Amount per Person:</label>
+	<input type="text" id="totalPerPerson" name="totalPerPerson" readonly>
+</form>
 
-numberOfPeople.addEventListener('input', () => {
-  amountOfPeopleValue = numberOfPeople.value;
-  if(amountOfPeopleValue != 0){
-    updateTotal();
-    updateTipAmount();
-  }
-});
+<script>
+	function calculateTip() {
+		let billAmount = document.getElementById("bill").value;
+		let tipPercentage = document.getElementById("tip").value;
+		let numOfPeople = document.getElementById("people").value;
 
-percentageButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    if(billValue != null && amountOfPeopleValue != null){
-      resetPercentageButtons();
-      tipValue = button.innerHTML.replace('%', '');
-      button.classList.add('percent-button-active');
-      updateTipAmount();
-    }
-  });
-});
+		let tipAmount = (billAmount * tipPercentage) / 100;
+		let totalBillAmount = Number(billAmount) + Number(tipAmount);
+		let totalPerPerson = totalBillAmount / numOfPeople;
 
-customPercentageButton.addEventListener('input', () => {
-  customValue = customPercentageButton.value;
-  tipValue = customValue;
-  updateTipAmount();
-});
+		document.getElementById("tipAmount").value = tipAmount.toFixed(2);
+		document.getElementById("totalPerPerson").value = totalPerPerson.toFixed(2);
+	}
+</script>
 
-function resetPercentageButtons(){
-  percentageButtons.forEach(button => {
-    button.classList.remove('percent-button-active');
-  });
-}
+<p>Our tip calculator is perfect for anyone who wants to save time and avoid the hassle of manual calculations. Whether you are dining out with friends or family, our calculator will make your life easier.</p>
+<p>So why wait? Try our tip calculator today and make your dining experience stress-free and enjoyable!</p>
 
-function updateTotal(){
-  contentFooterAmount1.innerHTML = '';
-  contentFooterAmount2.innerHTML = `$${billValue / amountOfPeopleValue}`;
-}
-
-function updateTipAmount(){
-  let tipAmount = (billValue / 100 * tipValue) / amountOfPeopleValue;
-  contentFooterAmount1.innerHTML = `$${tipAmount.toFixed(2)}`;
-}
-
-resetButton.addEventListener('click', ()=>{
-  contentFooterAmount1.innerHTML = '$0.00';
-  contentFooterAmount2.innerHTML = '$0.00';
-  bill.value = '';
-  numberOfPeople.value = '';
-  billValue = null;
-  amountOfPeopleValue = null;
-  resetPercentageButtons();          
-});
